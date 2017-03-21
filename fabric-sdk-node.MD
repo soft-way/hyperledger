@@ -6,9 +6,13 @@ Exercise fabric sdk on LinuxOne VM
 mkdir -p /data/setup
 cd /data/setup
 wget https://storage.googleapis.com/golang/go1.8.linux-s390x.tar.gz
-    
+tar -zxf go1.8.linux-s390x.tar.gz -C /data
 
+mkdir -p /data/setup/go/src
+ln -s /data/setup/go /go
 export GOPATH=/go
+export GOROOT=/data/go
+
 mkdir -p $GOPATH/src/github.com/hyperledger/
 cd $GOPATH/src/github.com/hyperledger/
 git clone https://github.com/hyperledger/fabric-ca.git
